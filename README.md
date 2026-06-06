@@ -1,3 +1,24 @@
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-blue)
+![Zabbix](https://img.shields.io/badge/Zabbix-7.0-red)
+![Ubuntu](https://img.shields.io/badge/Ubuntu-24.04-orange)
+![Patroni](https://img.shields.io/badge/Patroni-HA-green)
+![HAProxy](https://img.shields.io/badge/HAProxy-LoadBalancer-yellow)
+
+
+# Table of Contents
+
+* [Overview](#overview)
+* [Features](#features)
+* [Architecture](#architecture)
+* [Topology](#topology)
+* [Technology Stack](#technology-stack)
+* [Documentation](#documentation)
+* [High Availability Workflow](#high-availability-workflow)
+* [Tested Failover Scenarios](#tested-failover-scenarios)
+* [Lessons Learned](#lessons-learned)
+* [Future Improvements](#future-improvements)
+
+
 # Production Zabbix HA Stack
 
 Production-grade highly available monitoring infrastructure using PostgreSQL 16, Patroni, etcd, Keepalived, HAProxy and Zabbix 7.0.
