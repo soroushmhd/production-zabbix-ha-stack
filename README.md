@@ -138,6 +138,30 @@ This project is intended for educational and production-lab environments. Review
 
 ---
 
+# Project Goals
+
+This project was created to:
+
+* Learn PostgreSQL high availability concepts
+* Build a production-style monitoring stack
+* Validate failover scenarios
+* Improve infrastructure engineering skills
+* Practice operational troubleshooting
+
+---
+
+# Repository Structure
+
+```text id="jlwm1n"
+docs/          -> deployment documentation
+configs/       -> example configuration files
+diagrams/      -> architecture diagrams
+images/        -> screenshots
+scripts/       -> helper scripts
+```
+
+---
+
 # Author
 
 Soroush Mehmandoust
