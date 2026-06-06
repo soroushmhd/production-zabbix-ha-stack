@@ -28,7 +28,7 @@ The environment was built and tested on Ubuntu 24.04 servers.
 
 # Architecture
 
-![Architecture Diagram](diagrams/architecture.png)
+![Architecture Diagram](diagrams/architecture.svg)
 
 ---
 
