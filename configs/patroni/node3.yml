@@ -1,0 +1,66 @@
+scope: zabbix-cluster
+namespace: /service/
+name: postgresql-node3
+
+restapi:
+listen: 0.0.0.0:8008
+connect_address: NODE3-IP:8008
+
+etcd3:
+hosts:
+- NODE1-IP:2379
+- NODE2-IP:2379
+- NODE3-IP:2379
+
+bootstrap:
+dcs:
+ttl: 30
+loop_wait: 10
+retry_timeout: 10
+maximum_lag_on_failover: 1048576
+
+```
+postgresql:
+  use_pg_rewind: true
+  use_slots: true
+
+  parameters:
+    wal_level: replica
+    hot_standby: "on"
+    max_connections: 500
+    max_wal_senders: 10
+    max_replication_slots: 10
+    wal_keep_size: 512MB
+```
+
+initdb:
+- encoding: UTF8
+- data-checksums
+
+postgresql:
+listen: 0.0.0.0:5432
+connect_address: NODE3-IP:5432
+
+data_dir: /var/lib/postgresql/16/main
+
+bin_dir: /usr/lib/postgresql/16/bin
+
+authentication:
+replication:
+username: replicator
+password: CHANGE_ME
+
+```
+superuser:
+  username: postgres
+  password: CHANGE_ME
+```
+
+parameters:
+unix_socket_directories: '/var/run/postgresql'
+
+tags:
+nofailover: false
+noloadbalance: false
+clonefrom: false
+nosync: false
