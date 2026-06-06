@@ -1,9 +1,14 @@
+# Production Zabbix HA Stack
+
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-blue)
 ![Zabbix](https://img.shields.io/badge/Zabbix-7.0-red)
 ![Ubuntu](https://img.shields.io/badge/Ubuntu-24.04-orange)
 ![Patroni](https://img.shields.io/badge/Patroni-HA-green)
 ![HAProxy](https://img.shields.io/badge/HAProxy-LoadBalancer-yellow)
 
+Production-grade highly available monitoring infrastructure using PostgreSQL 16, Patroni, etcd, Keepalived, HAProxy and Zabbix 7.0.
+
+---
 
 # Table of Contents
 
@@ -12,16 +17,18 @@
 * [Architecture](#architecture)
 * [Topology](#topology)
 * [Technology Stack](#technology-stack)
+* [Deployment Order](#deployment-order)
+* [Deployment Workflow](#deployment-workflow)
 * [Documentation](#documentation)
+* [Repository Structure](#repository-structure)
+* [Example Configuration Files](#example-configuration-files)
 * [High Availability Workflow](#high-availability-workflow)
 * [Tested Failover Scenarios](#tested-failover-scenarios)
+* [Security Considerations](#security-considerations)
 * [Lessons Learned](#lessons-learned)
 * [Future Improvements](#future-improvements)
-
-
-# Production Zabbix HA Stack
-
-Production-grade highly available monitoring infrastructure using PostgreSQL 16, Patroni, etcd, Keepalived, HAProxy and Zabbix 7.0.
+* [Disclaimer](#disclaimer)
+* [Author](#author)
 
 ---
 
@@ -30,6 +37,15 @@ Production-grade highly available monitoring infrastructure using PostgreSQL 16,
 This project demonstrates a complete high availability architecture for Zabbix monitoring infrastructure with automatic PostgreSQL failover, frontend redundancy and distributed cluster management.
 
 The environment was built and tested on Ubuntu 24.04 servers.
+
+The repository contains:
+
+* Deployment documentation
+* Example production-style configuration files
+* Architecture diagrams
+* Failover testing procedures
+* Troubleshooting notes
+* Operational lessons learned
 
 ---
 
@@ -78,18 +94,90 @@ The environment was built and tested on Ubuntu 24.04 servers.
 
 ---
 
+# Deployment Order
+
+The environment should be deployed in the following order:
+
+1. Prepare Ubuntu 24.04 servers
+2. Configure network connectivity and hostname resolution
+3. Install and configure ETCD cluster
+4. Install PostgreSQL 16 on database nodes
+5. Configure Patroni cluster management
+6. Configure PostgreSQL replication and failover
+7. Configure Keepalived Virtual IP
+8. Validate PostgreSQL high availability
+9. Install Zabbix server nodes
+10. Configure Zabbix HA
+11. Configure HAProxy frontend load balancing
+12. Perform failover testing and validation
+
+---
+
+# Deployment Workflow
+
+```text
+Ubuntu Preparation
+        ↓
+ETCD Cluster
+        ↓
+PostgreSQL Installation
+        ↓
+Patroni Configuration
+        ↓
+Keepalived VIP
+        ↓
+Zabbix HA Nodes
+        ↓
+HAProxy Load Balancer
+        ↓
+Failover Validation
+```
+
+---
+
 # Documentation
 
-| Section                 | Description                         |
-| ----------------------- | ----------------------------------- |
-| PostgreSQL Installation | PostgreSQL setup and replication    |
-| ETCD Installation       | Distributed consensus configuration |
-| Patroni Configuration   | PostgreSQL cluster management       |
-| Keepalived Setup        | VIP failover                        |
-| Zabbix HA Setup         | Zabbix cluster configuration        |
-| HAProxy Setup           | Frontend load balancing             |
-| Failover Testing        | HA scenario validation              |
-| Troubleshooting         | Common issues and fixes             |
+| Section                    | Description                                |
+| -------------------------- | ------------------------------------------ |
+| prerequisites.md           | Infrastructure and deployment requirements |
+| etcd-installation.md       | Distributed consensus configuration        |
+| postgresql-installation.md | PostgreSQL setup and replication           |
+| patroni-installation.md    | PostgreSQL cluster management              |
+| keepalived.md              | VIP failover                               |
+| zabbix-ha.md               | Zabbix HA configuration                    |
+| haproxy.md                 | Frontend load balancing                    |
+| failover-testing.md        | HA scenario validation                     |
+| troubleshooting.md         | Common issues and fixes                    |
+| lessons-learned.md         | Operational observations                   |
+
+---
+
+# Repository Structure
+
+```text
+production-zabbix-ha-stack/
+│
+├── configs/        Example configuration files
+├── diagrams/       Architecture diagrams
+├── docs/           Deployment documentation
+├── images/         Screenshots and validation images
+├── scripts/        Helper scripts
+└── README.md
+```
+
+---
+
+# Example Configuration Files
+
+The repository includes sanitized example configuration files for:
+
+* PostgreSQL
+* Patroni
+* Keepalived
+* HAProxy
+* Zabbix HA
+
+All sensitive information has been removed or replaced with placeholders.
 
 ---
 
@@ -113,12 +201,23 @@ The environment was built and tested on Ubuntu 24.04 servers.
 
 ---
 
+# Security Considerations
+
+* SCRAM-SHA-256 authentication is recommended over MD5
+* PostgreSQL access should be restricted to trusted networks
+* PostgreSQL should not be exposed publicly
+* Firewall rules should limit database access
+* Strong passwords should be used for replication users
+
+---
+
 # Lessons Learned
 
 * Proper PostgreSQL replication configuration is critical
 * VIP migration timing impacts reconnect behavior
 * Patroni and etcd provide reliable HA orchestration
 * HA testing is essential before production deployment
+* Operational visibility improves troubleshooting
 
 ---
 
@@ -129,36 +228,42 @@ The environment was built and tested on Ubuntu 24.04 servers.
 * Ansible automation
 * Prometheus/Grafana integration
 * TLS encryption between nodes
+* Automated failover testing
 
 ---
+
+# Screenshots
+
+## Patroni Cluster Status
+
+![Patroni Cluster](images/patroni-cluster.png)
+
+---
+
+## PostgreSQL Replication
+
+![PostgreSQL Replication](images/postgresql-replication.png)
+
+---
+
+## Zabbix HA Status
+
+![Zabbix HA](images/zabbix-ha-status.png)
+
+---
+
+## VIP Migration
+
+![VIP Migration](images/vip-migration.png)
+
+---
+
 
 # Disclaimer
 
-This project is intended for educational and production-lab environments. Review all security settings before using in production.
+This project is intended for educational and production-lab environments.
 
----
-
-# Project Goals
-
-This project was created to:
-
-* Learn PostgreSQL high availability concepts
-* Build a production-style monitoring stack
-* Validate failover scenarios
-* Improve infrastructure engineering skills
-* Practice operational troubleshooting
-
----
-
-# Repository Structure
-
-```text id="jlwm1n"
-docs/          -> deployment documentation
-configs/       -> example configuration files
-diagrams/      -> architecture diagrams
-images/        -> screenshots
-scripts/       -> helper scripts
-```
+Review all security settings before using in production.
 
 ---
 
