@@ -99,6 +99,17 @@ Update:
 
 ---
 
+# Example Configuration Files
+
+| File                        | Description                     |
+| --------------------------- | ------------------------------- |
+| `configs/patroni/node1.yml` | Patroni configuration for node1 |
+| `configs/patroni/node2.yml` | Patroni configuration for node2 |
+| `configs/patroni/node3.yml` | Patroni configuration for node3 |
+
+
+---
+
 # Important Parameters
 
 | Parameter       | Description                     |

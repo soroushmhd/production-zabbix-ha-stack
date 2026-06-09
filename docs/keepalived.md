@@ -75,6 +75,16 @@ Update:
 
 ---
 
+# Example Configuration Files
+
+| File                                       | Description                          |
+| ------------------------------------------ | ------------------------------------ |
+| `configs/keepalived/keepalived-node1.conf` | Keepalived master node configuration |
+| `configs/keepalived/keepalived-node2.conf` | Keepalived backup node configuration |
+
+
+---
+
 # Health Check Script
 
 Create:

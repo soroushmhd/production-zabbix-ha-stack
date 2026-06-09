@@ -109,6 +109,15 @@ NodeAddress=NODE2-IP:10051
 
 ---
 
+# Example Configuration Files
+
+| File                                      | Description                   |
+| ----------------------------------------- | ----------------------------- |
+| `configs/zabbix/zabbix_server_node1.conf` | Zabbix HA node1 configuration |
+| `configs/zabbix/zabbix_server_node2.conf` | Zabbix HA node2 configuration |
+
+---
+
 # Configure PHP Frontend
 
 Edit the Nginx configuration:

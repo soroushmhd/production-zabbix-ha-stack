@@ -65,6 +65,16 @@ max_replication_slots=10
 ```
 
 ---
+# Example Configuration Files
+
+| File                                 | Description                     |
+| ------------------------------------ | ------------------------------- |
+| `configs/postgresql/postgresql.conf` | PostgreSQL main configuration   |
+| `configs/postgresql/pg_hba.conf`     | PostgreSQL authentication rules |
+
+---
+
+---
 
 # Create Replication User
 

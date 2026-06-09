@@ -63,6 +63,15 @@ backend zabbix_servers
 
 ---
 
+# Example Configuration Files
+
+| File                          | Description                                  |
+| ----------------------------- | -------------------------------------------- |
+| `configs/haproxy/haproxy.cfg` | HAProxy frontend load balancer configuration |
+
+
+---
+
 # Configuration Overview
 
 | Section            | Purpose                      |

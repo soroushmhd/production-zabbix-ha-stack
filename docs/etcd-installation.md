@@ -8,7 +8,7 @@ This section describes the ETCD distributed cluster configuration used by Patron
 
 Run on all database nodes:
 
-```bash
+```bash id="5czw88"
 apt install etcd-server etcd-client
 ```
 
@@ -18,7 +18,7 @@ apt install etcd-server etcd-client
 
 Edit:
 
-```bash
+```bash id="9bb7d0"
 /etc/default/etcd
 ```
 
@@ -31,9 +31,19 @@ Configure:
 
 ---
 
+# Example Configuration Files
+
+| File                           | Description                  |
+| ------------------------------ | ---------------------------- |
+| `configs/etcd/etcd-node1.conf` | ETCD configuration for node1 |
+| `configs/etcd/etcd-node2.conf` | ETCD configuration for node2 |
+| `configs/etcd/etcd-node3.conf` | ETCD configuration for node3 |
+
+---
+
 # Start ETCD
 
-```bash
+```bash id="v9hr9k"
 systemctl enable --now etcd
 ```
 
@@ -41,12 +51,28 @@ systemctl enable --now etcd
 
 # Verify Cluster Health
 
-```bash
+```bash id="3r0s4i"
 etcdctl endpoint health --cluster=true
 ```
 
 ---
 
+# Validation
+
+Verify all ETCD members are healthy and reachable before continuing with Patroni deployment.
+
+---
+
 # Notes
 
-ETCD consistency and network stability are critical for reliable Patroni failover behavior.
+* ETCD consistency and network stability are critical for reliable Patroni failover behavior
+* Time synchronization between nodes is strongly recommended
+* ETCD quorum loss may impact failover operations
+
+---
+
+# Next Step
+
+Continue with PostgreSQL installation:
+
+`docs/postgresql-installation.md`
