@@ -78,8 +78,23 @@ max_replication_slots=10
 
 # Create Replication User
 
+Connect to Database
+
+```bash
+sudo -u postgres psql
+
+```
+Create a replicator user on each database nodes
+
 ```sql
+ALTER USER postgres WITH PASSWORD 'CHANGE_ME';
 CREATE USER replicator REPLICATION LOGIN ENCRYPTED PASSWORD 'CHANGE_ME';
+```
+
+Exit from database
+
+```sql
+\q
 ```
 
 ---
@@ -99,3 +114,9 @@ Check PostgreSQL status:
 ```bash
 systemctl status postgresql
 ```
+
+# Next Step
+
+Continue with PostgreSQL installation:
+
+`docs/patroni-installation.md`

@@ -27,6 +27,7 @@ Production-grade highly available monitoring infrastructure using PostgreSQL 16,
 * [Security Considerations](#security-considerations)
 * [Lessons Learned](#lessons-learned)
 * [Future Improvements](#future-improvements)
+* [Screenshots](#screenshoot)
 * [Disclaimer](#disclaimer)
 * [Author](#author)
 
@@ -171,6 +172,7 @@ production-zabbix-ha-stack/
 
 The repository includes sanitized example configuration files for:
 
+* ETCD
 * PostgreSQL
 * Patroni
 * Keepalived
@@ -233,6 +235,11 @@ All sensitive information has been removed or replaced with placeholders.
 ---
 
 # Screenshots
+
+## ETCD Cluster Health
+
+![ETCD Cluster](images/etcd-cluster-health.png)
+
 
 ## Patroni Cluster Status
 

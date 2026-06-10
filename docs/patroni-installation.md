@@ -26,13 +26,22 @@ apt install patroni -y
 
 ---
 
-# Patroni Configuration File
+# Create Patroni Configuration File
 
-Main configuration file:
+Create the main Patroni configuration file:
 
-```bash id="3wh47x"
-/etc/patroni/config.yml
+```bash id="0m9v2x"
+vim /etc/patroni/config.yml
 ```
+
+Paste the Patroni cluster configuration into the file.
+
+Example configurations are available in:
+
+* `configs/patroni/node1.yml`
+* `configs/patroni/node2.yml`
+* `configs/patroni/node3.yml`
+
 
 ---
 
@@ -99,16 +108,13 @@ Update:
 
 ---
 
-# Example Configuration Files
+Restart Patroni service
 
-| File                        | Description                     |
-| --------------------------- | ------------------------------- |
-| `configs/patroni/node1.yml` | Patroni configuration for node1 |
-| `configs/patroni/node2.yml` | Patroni configuration for node2 |
-| `configs/patroni/node3.yml` | Patroni configuration for node3 |
+```
 
 
----
+```
+
 
 # Important Parameters
 
