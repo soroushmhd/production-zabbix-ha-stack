@@ -40,6 +40,7 @@ vrrp_script chk_postgresql {
     weight 0
 }
 
+
 vrrp_instance VI_1 {
     state MASTER
     interface ens192
@@ -81,7 +82,7 @@ Update:
 | ------------------------------------------ | ------------------------------------ |
 | `configs/keepalived/keepalived-node1.conf` | Keepalived master node configuration |
 | `configs/keepalived/keepalived-node2.conf` | Keepalived backup node configuration |
-
+| `configs/keepalived/keepalived-node3.conf` | Keepalived backup node configuration |
 
 ---
 
@@ -162,3 +163,9 @@ Expected result:
 * VIP failover depends on Patroni health endpoint
 * Incorrect interface names can break VRRP
 * Keepalived timing affects client reconnection behavior
+
+# Next Step
+
+Continue with Zabbix HA installation:
+
+`docs/zabbix-ha.md`
