@@ -149,6 +149,7 @@ Expected result:
 * Round-robin balancing provides simple traffic distribution
 * Timeouts should be tuned for production workloads
 
+---
 
 ## Production Considerations
 
