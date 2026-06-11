@@ -61,6 +61,16 @@ max_replication_slots=10
 
 ---
 
+> Note:
+> This configuration file is provided as an example baseline configuration.
+> Production environments should tune PostgreSQL parameters based on:
+>
+> - Available RAM
+> - CPU resources
+> - Workload characteristics
+> - Disk performance
+> - Replication requirements
+
 ---
 
 # Create Replication User

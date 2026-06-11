@@ -130,6 +130,18 @@ NodeAddress=NODE2-IP:10051
 
 ---
 
+> Note:
+> Cache-related parameters should be adjusted according to:
+>
+> - Number of monitored hosts
+> - Collected metrics volume
+> - Database performance
+> - Available server memory
+>
+> The provided values are example production-style baseline settings.
+
+---
+
 # Configure Web Server (Nginx)
 
 Edit the Nginx configuration on zabbix-node1 and zabbix-node2:
