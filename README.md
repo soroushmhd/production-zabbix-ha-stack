@@ -60,7 +60,6 @@ The repository contains:
 * HAProxy frontend load balancing
 * Production-style architecture
 * Multi-node redundancy
-* No single point of failure
 
 ---
 
@@ -240,16 +239,11 @@ All sensitive information has been removed or replaced with placeholders.
 
 ![ETCD Cluster](images/etcd-cluster-health.png)
 
+---
 
 ## Patroni Cluster Status
 
-![Patroni Cluster](images/patroni-cluster.png)
-
----
-
-## PostgreSQL Replication
-
-![PostgreSQL Replication](images/postgresql-replication.png)
+![Patroni Cluster](images/patroni-cluster-status.png)
 
 ---
 
@@ -259,12 +253,11 @@ All sensitive information has been removed or replaced with placeholders.
 
 ---
 
-## VIP Migration
+## Zabbix HA WebUI
 
-![VIP Migration](images/vip-migration.png)
+![Zabbix HA](images/zabbix-ha-webui.png)
 
 ---
-
 
 # Disclaimer
 

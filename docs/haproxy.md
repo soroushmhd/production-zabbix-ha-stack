@@ -43,23 +43,37 @@ haproxy -v
 ```cfg id="zbxslx"
 global
     log /dev/log local0
+    maxconn 4096
+    user haproxy
+    group haproxy
 
 defaults
     log global
+    mode http
     option httplog
+    option dontlognull
+    retries 3
+    timeout connect 5s
+    timeout client 50s
+    timeout server 50s
+    timeout http-request 10s
 
 frontend zabbix_frontend
     bind *:80
     mode http
+    option forwardfor
     default_backend zabbix_servers
 
 backend zabbix_servers
     mode http
     balance roundrobin
+    option httpchk GET /zabbix.php
 
-    server zabbix-node1 NODE1-IP:80 check
-    server zabbix-node2 NODE2-IP:80 check
+    server zabbix-node1 NODE1-IP:80 check fall 3 rise 2
+    server zabbix-node2 NODE2-IP:80 check fall 3 rise 2
 ```
+
+Replace `NODE1-IP` and `NODE2-IP` with the actual IP addresses of your Zabbix frontend nodes.
 
 ---
 
@@ -80,6 +94,7 @@ backend zabbix_servers
 | backend            | Define Zabbix frontend nodes |
 | balance roundrobin | Distribute traffic evenly    |
 | check              | Enable backend health checks |
+| `check fall 3 rise 2` | Mark node down after 3 failed checks, up after 2 successful checks |
 
 ---
 
@@ -108,7 +123,7 @@ systemctl status haproxy
 Verify frontend accessibility:
 
 ```bash id="kl3xgk"
-curl http://LOADBALANCER-IP
+curl http://LOADBALANCER-IP/zabbix.php
 ```
 
 ---
@@ -133,3 +148,12 @@ Expected result:
 * Health checks are critical for automatic backend removal
 * Round-robin balancing provides simple traffic distribution
 * Timeouts should be tuned for production workloads
+
+
+## Production Considerations
+
+This guide demonstrates a **single-node HAProxy** setup for **educational purposes**.
+
+**For production environments:**
+- Deploy at least 2 HAProxy nodes with Keepalived (floating IP)
+- Ensure HAProxy itself is highly available to avoid a single point of failure
