@@ -220,7 +220,7 @@ Node zabbix-node1: active
 Node zabbix-node2: standby
 ```
 
-![Zabbix cluster health check](images/zabbix-ha-status.png)
+![Zabbix cluster health check](../images/zabbix-ha-status.png)
 
 ---
 
@@ -237,7 +237,7 @@ Navigate to `http://<zabbix-node-ip>` in your browser.
 - Select **Default language**: English (en_US)
 - Click **Next step**
 
-![Zabbix Welcome Screen](images/zabbix-preinstallation1.png)
+![Zabbix Welcome Screen](../images/zabbix-preinstallation1.png)
 
 ---
 
@@ -260,7 +260,7 @@ Verify all requirements are met:
 
 **All checks passed** → Click **Next step**
 
-![Prerequisites Check](images/zabbix-preinstallation2.png)
+![Prerequisites Check](../images/zabbix-preinstallation2.png)
 
 ---
 
@@ -283,7 +283,7 @@ Enter your PostgreSQL HA cluster connection details:
 
 Click **Next step**
 
-![Database Configuration](images/zabbix-preinstallation3.png)
+![Database Configuration](../images/zabbix-preinstallation3.png)
 
 ---
 
@@ -299,7 +299,7 @@ Configure the following settings:
 
 Click **Next step**
 
-![Zabbix Settings](images/zabbix-preinstallation4.png)
+![Zabbix Settings](../images/zabbix-preinstallation4.png)
 
 ---
 
@@ -320,7 +320,7 @@ Review all configuration parameters:
 
 **If everything is correct** → Click **Next step**
 
-![Pre-installation Summary](images/zabbix-preinstallation5.png)
+![Pre-installation Summary](../images/zabbix-preinstallation5.png)
 
 ---
 
@@ -334,7 +334,7 @@ You will see the success message:
 
 Click **Finish** to complete the installation.
 
-![Installation Complete](images/zabbix-preinstallation6.png)
+![Installation Complete](../images/zabbix-preinstallation6.png)
 
 ---
 
@@ -370,7 +370,7 @@ After successfully configuring Zabbix High Availability nodes, you can verify th
 1. Log in to the Zabbix frontend as **Admin** user
 2. Navigate to **Reports** → **System information** 
 
-![Validate HA Zabbix from web](images/zabbix-ha-webui.png)
+![Validate HA Zabbix from web](../images/zabbix-ha-webui.png)
 
 
 # Failover Validation
