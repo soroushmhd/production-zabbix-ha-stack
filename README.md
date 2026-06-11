@@ -4,6 +4,7 @@
 ![Zabbix](https://img.shields.io/badge/Zabbix-7.0-red)
 ![Ubuntu](https://img.shields.io/badge/Ubuntu-24.04-orange)
 ![Patroni](https://img.shields.io/badge/Patroni-HA-green)
+![etcd](https://img.shields.io/badge/etcd-HA-0077B5)
 ![HAProxy](https://img.shields.io/badge/HAProxy-LoadBalancer-yellow)
 
 Production-grade highly available monitoring infrastructure using PostgreSQL 16, Patroni, etcd, Keepalived, HAProxy and Zabbix 7.0.
