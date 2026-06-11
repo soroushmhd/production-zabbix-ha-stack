@@ -17,6 +17,7 @@ Production-grade highly available monitoring infrastructure using PostgreSQL 16,
 * [Architecture](#architecture)
 * [Topology](#topology)
 * [Technology Stack](#technology-stack)
+* [Tested Environment](#tested-environment)
 * [Deployment Order](#deployment-order)
 * [Deployment Workflow](#deployment-workflow)
 * [Documentation](#documentation)
@@ -28,6 +29,7 @@ Production-grade highly available monitoring infrastructure using PostgreSQL 16,
 * [Lessons Learned](#lessons-learned)
 * [Future Improvements](#future-improvements)
 * [Screenshots](#screenshoot)
+* [Production Limitations](#production-limitations)
 * [Disclaimer](#disclaimer)
 * [Author](#author)
 
@@ -67,6 +69,8 @@ The repository contains:
 
 ![Architecture Diagram](diagrams/architecture.svg)
 
+The architecture consists of a 3-node PostgreSQL HA cluster managed by Patroni and ETCD, with Keepalived providing VIP failover and HAProxy balancing Zabbix frontend traffic.
+
 ---
 
 # Topology
@@ -91,6 +95,19 @@ The repository contains:
 | Zabbix 7.0    | Monitoring platform      |
 | HAProxy       | Frontend load balancing  |
 | Ubuntu 24.04  | Operating system         |
+
+---
+
+# Tested Environment
+
+| Component | Version |
+|----------|---------|
+| Ubuntu | 24.04 |
+| PostgreSQL | 16 |
+| Patroni | 4.x |
+| ETCD | 3.x |
+| Zabbix | 7.0 |
+| HAProxy | 3.2 |
 
 ---
 
@@ -259,6 +276,21 @@ All sensitive information has been removed or replaced with placeholders.
 
 ---
 
+# Production Limitations
+
+This repository demonstrates a production-style HA environment for educational and lab purposes.
+
+Before using in real production environments, consider implementing:
+
+- TLS encryption between nodes
+- Backup and disaster recovery strategy
+- Monitoring for ETCD and Patroni
+- Secret management solution
+- Multi-node HAProxy redundancy
+- Automated configuration management
+
+
+---
 # Disclaimer
 
 This project is intended for educational and production-lab environments.

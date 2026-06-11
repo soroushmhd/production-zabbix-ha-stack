@@ -68,7 +68,7 @@ apt install postgresql-client-common
 Install the main PostgreSQL client
 
 ```bash
-Install the main PostgreSQL client
+apt install postgresql-client-16 -y
 ```
 
 Import the schema:

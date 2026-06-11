@@ -44,6 +44,21 @@ The following ports must be accessible:
 
 ---
 
+# Time Synchronization
+
+All nodes should use synchronized time sources.
+
+Recommended:
+
+- chrony
+- systemd-timesyncd
+
+Time drift can impact:
+- ETCD quorum stability
+- Patroni leader election
+- Failover timing
+
+---
 # Security Recommendations
 
 * Restrict database access using firewall rules
