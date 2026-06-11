@@ -34,18 +34,6 @@ apt install postgresql-16 postgresql-client-16 -y
 
 ---
 
-# Configure PostgreSQL Authentication
-
-Edit:
-
-```bash
-/etc/postgresql/16/main/pg_hba.conf
-```
-
-Add replication rules and trusted access configuration.
-
----
-
 # Configure PostgreSQL Parameters
 
 Edit:
@@ -70,7 +58,6 @@ max_replication_slots=10
 | File                                 | Description                     |
 | ------------------------------------ | ------------------------------- |
 | `configs/postgresql/postgresql.conf` | PostgreSQL main configuration   |
-| `configs/postgresql/pg_hba.conf`     | PostgreSQL authentication rules |
 
 ---
 
