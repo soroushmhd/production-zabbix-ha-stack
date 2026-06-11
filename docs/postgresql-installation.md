@@ -104,6 +104,6 @@ systemctl status postgresql
 
 # Next Step
 
-Continue with PostgreSQL installation:
+Continue with Patroni installation:
 
 `docs/patroni-installation.md`

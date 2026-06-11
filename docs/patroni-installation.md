@@ -128,13 +128,6 @@ Update:
 
 ---
 
-Restart Patroni service
-
-```
-
-
-```
-
 
 # Important Parameters
 
@@ -211,3 +204,9 @@ Expected result:
 * Patroni automatically manages PostgreSQL failover
 * ETCD quorum is critical for cluster stability
 * Network latency can impact leader election timing
+
+# Next Step
+
+Continue with Keepalived installation:
+
+`docs/keepalived.md`
