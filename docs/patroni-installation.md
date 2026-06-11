@@ -55,7 +55,10 @@ namespace: /db/
 name: node1
 
 etcd3:
-  host: NODE1-IP:2379
+  hosts:
+      - NODE1-IP:2379
+      - NODE2-IP:2379
+      - NODE3-IP:2379
 
 bootstrap:
   dcs:
@@ -70,12 +73,22 @@ bootstrap:
         wal_level: replica
         max_wal_senders: 10
         max_replication_slots: 10
+  initdb:
+    - encoding: UTF8
+    - data-checksums
+  users:
+    postgres:
+      password: CHANGE_ME
+      options:
+        - superuser
+        - createdb
 
 postgresql:
   listen: 0.0.0.0:5432
   connect_address: NODE1-IP:5432
 
   data_dir: /var/lib/postgresql/16/main/
+  bin_dir: /usr/lib/postgresql/16/bin/
 
   authentication:
     superuser:
@@ -89,6 +102,7 @@ postgresql:
 restapi:
   listen: 0.0.0.0:8008
   connect_address: NODE1-IP:8008
+
 ```
 
 ---
