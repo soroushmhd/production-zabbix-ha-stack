@@ -66,6 +66,12 @@ bootstrap:
     retry_timeout: 10
 
     postgresql:
+      pg_hba:
+          - host     replication     replicator  NODE1-IP/32     scram-sha-256
+          - host     replication     replicator  NODE2-IP/32     scram-sha-256
+          - host     replication     replicator  NODE3-IP/32     scram-sha-256
+          - host     all     zabbix  NODE1-IP/32     scram-sha-256
+          - host     all     zabbix  NODE2-IP/32     scram-sha-256
       use_pg_rewind: true
 
       parameters:
