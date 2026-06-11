@@ -3,10 +3,7 @@ namespace: /db/
 name: node3
 
 etcd3:
-  hosts:
-      - NODE1-IP:2379
-      - NODE2-IP:2379
-      - NODE3-IP:2379
+  host: NODE3-IP:2379
 
 bootstrap:
   dcs:
