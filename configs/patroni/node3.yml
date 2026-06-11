@@ -39,7 +39,6 @@ postgresql:
 
   data_dir: /var/lib/postgresql/16/main/
   bin_dir: /usr/lib/postgresql/16/bin/
-  config_file: /etc/postgresql/16/main/postgresql.conf
 
   authentication:
     superuser:
