@@ -73,7 +73,7 @@ host replication replicator NODE2-IP/32 scram-sha-256
 host replication replicator NODE3-IP/32 scram-sha-256
 ```
 
-Reload PostgreSQL after changes.
+Add these lines in patroni file and restart the service
 
 ---
 

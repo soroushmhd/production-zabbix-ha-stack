@@ -112,6 +112,8 @@ Check PostgreSQL status:
 systemctl status postgresql
 ```
 
+---
+
 # Next Step
 
 Continue with Patroni installation:

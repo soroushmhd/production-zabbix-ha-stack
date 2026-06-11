@@ -205,6 +205,8 @@ Expected result:
 * ETCD quorum is critical for cluster stability
 * Network latency can impact leader election timing
 
+---
+
 # Next Step
 
 Continue with Keepalived installation:

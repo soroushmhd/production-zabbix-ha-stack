@@ -413,6 +413,7 @@ Expected result:
 * HAProxy improves frontend availability and load balancing
 * ETCD stores Patroni cluster state information
 
+---
 
 # Next Step
 

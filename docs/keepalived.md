@@ -164,6 +164,8 @@ Expected result:
 * Incorrect interface names can break VRRP
 * Keepalived timing affects client reconnection behavior
 
+---
+
 # Next Step
 
 Continue with Zabbix HA installation:
