@@ -170,4 +170,4 @@ Expected result:
 
 Continue with Zabbix HA installation:
 
-`docs/zabbix-ha.md`
+[Zabbix 7.0 High Availability Setup](zabbix-ha.md)

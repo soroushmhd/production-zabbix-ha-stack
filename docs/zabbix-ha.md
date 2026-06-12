@@ -165,7 +165,7 @@ server {
 # Remove default nginx site
 
 ```bash
-rm /etc/nginx/sites-enabled/default
+rm -f /etc/nginx/sites-enabled/default
 ```
 
 ---
@@ -419,4 +419,4 @@ Expected result:
 
 Continue with HAProxy configuration:
 
-`docs/haproxy.md`
+[HAProxy Configuration](haproxy.md)

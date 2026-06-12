@@ -118,4 +118,4 @@ systemctl status postgresql
 
 Continue with Patroni installation:
 
-`docs/patroni-installation.md`
+[Patroni Installation Guide](patroni-installation.md)

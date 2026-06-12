@@ -75,4 +75,4 @@ Verify all ETCD members are healthy and reachable before continuing with Patroni
 
 Continue with PostgreSQL installation:
 
-`docs/postgresql-installation.md`
+[PostgreSQL 16 Installation](postgresql-installation.md)

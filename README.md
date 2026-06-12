@@ -136,7 +136,7 @@ The environment should be deployed in the following order:
 ```text
 Ubuntu Preparation
         ↓
-ETCD Cluster
+ETCD Cluster Installation
         ↓
 PostgreSQL Installation
         ↓

@@ -211,4 +211,5 @@ Expected result:
 
 Continue with Keepalived installation:
 
-`docs/keepalived.md`
+
+[Keepalived Configuration](keepalived.md)
